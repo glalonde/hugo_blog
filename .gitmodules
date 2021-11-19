@@ -1,0 +1,3 @@
+[submodule "themes/cinnastyx"]
+	path = themes/cinnastyx
+	url = https://github.com/glalonde/cinnastyx.git
