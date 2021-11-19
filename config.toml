@@ -1,0 +1,20 @@
+title = "Cinnastyx"
+theme = "cinnastyx"
+paginate = 5
+pygmentsStyle = "solarized-dark" # solarized-light, -dark or -dark256
+copyright = ""
+
+relativeURLs = true
+
+[params]
+  scheme = "dark" # light, dark, gray or preference
+  description = "Reporting Live"
+  logo = "mvq.jpg"
+
+[menu]
+  [[menu.main]]
+    name = "Feed"
+    url = "/index.xml"
+  [[menu.main]]
+    name = "About"
+    url = "/about"
