@@ -1,0 +1,53 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>Image Test</title>
+<link rel=stylesheet href=../../css/colors-dark.min.61a983af239d63957388a83b7919dd3489887645628e1bc2f7ca6025e1f3d131.css>
+</head>
+<body>
+<div class=bg-port></div>
+<header class=header>
+<nav class="header-inner header-grid">
+<div class=header-menu>
+<a class=home href>Cinnastyx</a>
+<ul class=nav>
+<li><a href=../../about><span>About</span></a></li>
+<li><a href=../../index.xml><span>Feed</span></a></li>
+</ul>
+</div>
+</nav>
+</header>
+<div class=outer>
+<div id=page class=inner>
+<article class="post-full post">
+<div class=content-div>
+<header class=post-header>
+<time class=post-date>30 May 2021</time>
+<h1 class=article-title>Image Test</h1>
+</header>
+<div class=post-column>
+<div class=common-image-container>
+<div class=post-full-image>
+<img srcset="../../posts/image-test/images/featured_hub2175e5d962ab8bbbcb730062e32d53a_4368799_300x0_resize_q75_box.jpg 300w, ../../posts/image-test/images/featured_hub2175e5d962ab8bbbcb730062e32d53a_4368799_600x0_resize_q75_box.jpg 600w, ../../posts/image-test/images/featured_hub2175e5d962ab8bbbcb730062e32d53a_4368799_1000x0_resize_q75_box.jpg 1000w, ../../posts/image-test/images/featured_hub2175e5d962ab8bbbcb730062e32d53a_4368799_2000x0_resize_q75_box.jpg 2000w" sizes src=../../posts/image-test/images/featured_hub2175e5d962ab8bbbcb730062e32d53a_4368799_2000x0_resize_q75_box.jpg>
+</div>
+</div>
+</div>
+<div class="post-content post-column">
+<p>So, how do we get responsive images?</p>
+<p>At first, I reached for shortcodes, and got about 90% of the way there. But then I realized that shortcodes cannot be invoked from the definition of a shortcode &ndash; only from the body of a piece of content.</p>
+<p>So at that point, I reached for partials instead. Partials are slightly less ergonomic because they seem to have some strangeness around argument passing. Arguments can only be passed through a dictionary manually.</p>
+<p>This works.</p>
+<div class=common-image-container>
+<div class=post-standard-image>
+<img srcset="../../posts/image-test/images/cactus_flower_hu10d3bc866ab6469948bac170ae73c5f7_2476971_300x0_resize_q75_box.jpg 300w, ../../posts/image-test/images/cactus_flower_hu10d3bc866ab6469948bac170ae73c5f7_2476971_600x0_resize_q75_box.jpg 600w, ../../posts/image-test/images/cactus_flower_hu10d3bc866ab6469948bac170ae73c5f7_2476971_1000x0_resize_q75_box.jpg 1000w, ../../posts/image-test/images/cactus_flower_hu10d3bc866ab6469948bac170ae73c5f7_2476971_2000x0_resize_q75_box.jpg 2000w" sizes src=../../posts/image-test/images/cactus_flower_hu10d3bc866ab6469948bac170ae73c5f7_2476971_2000x0_resize_q75_box.jpg>
+</div>
+</div>
+</div>
+</div>
+</article>
+<footer id=footer></footer>
+</div>
+</div>
+</body>
+</html>

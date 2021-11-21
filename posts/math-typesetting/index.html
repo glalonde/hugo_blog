@@ -1,0 +1,58 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>Math Typesetting</title>
+<link rel=stylesheet href=../../css/colors-dark.min.61a983af239d63957388a83b7919dd3489887645628e1bc2f7ca6025e1f3d131.css>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css integrity=sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js integrity=sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+</head>
+<body>
+<div class=bg-port></div>
+<header class=header>
+<nav class="header-inner header-grid">
+<div class=header-menu>
+<a class=home href>Cinnastyx</a>
+<ul class=nav>
+<li><a href=../../about><span>About</span></a></li>
+<li><a href=../../index.xml><span>Feed</span></a></li>
+</ul>
+</div>
+</nav>
+</header>
+<div class=outer>
+<div id=page class=inner>
+<article class="post-full post">
+<div class=content-div>
+<header class=post-header>
+<time class=post-date>08 March 2019</time>
+<h1 class=article-title>Math Typesetting</h1>
+</header>
+<div class="post-content post-column"><p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
+<p>In this example we will be using <a href=https://katex.org/>KaTeX</a></p>
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href=https://katex.org/docs/autorender.html>Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#719e07>{{</span> <span style=color:#719e07>if</span> or .Params.math .Site.Params.math <span style=color:#719e07>}}</span>
+<span style=color:#719e07>{{</span> partial <span style=color:#2aa198>&#34;math.html&#34;</span> . <span style=color:#719e07>}}</span>
+<span style=color:#719e07>{{</span> end <span style=color:#719e07>}}</span>
+</code></pre></div><ul>
+<li>To enable KaTex globally set the parameter <code>math</code> to <code>true</code> in a project&rsquo;s configuration</li>
+<li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files</li>
+</ul>
+<p><strong>Note:</strong> Use the online reference of <a href=https://katex.org/docs/supported.html>Supported TeX Functions</a></p>
+<h3 id=examples>Examples</h3>
+<p>Block math:
+$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p></div>
+</div>
+</article>
+<footer id=footer></footer>
+</div>
+</div>
+</body>
+</html>
