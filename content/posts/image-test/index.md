@@ -4,6 +4,7 @@ date: 2021-05-30T14:41:22-07:00
 summary: "How to get your free server to do the legwork of image manipulation."
 ---
 
+<!-- {{<check-resources>}} -->
 
 So, how do we get responsive images?
 
