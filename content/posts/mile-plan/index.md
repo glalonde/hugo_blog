@@ -1,5 +1,5 @@
 ---
-title: "Mile Training plan"
+title: "Mile Training Plan"
 date: 2021-11-22
 summary: Road 2 4.59.xx
 ---
