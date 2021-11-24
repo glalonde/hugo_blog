@@ -1,9 +1,10 @@
 title = "glalonde"
 theme = "cinnastyx"
-paginate = 5
+paginate = 20
 pygmentsStyle = "solarized-dark" # solarized-light, -dark or -dark256
 copyright = ""
 
+baseUrl = "/"
 relativeURLs = true
 
 [params]

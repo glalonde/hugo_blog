@@ -10,7 +10,7 @@ summary: Road 2 4.59.xx
 
 Jack Daniels timings. I'll ignore `T`.`I` and `R` correspond with aerobic and anaerobic intervals.
 
-# Aerobic intervals:
+# Aerobic intervals
 According to JD, aerobic interval training(`I`) is for VO2Max, so this should be a pace that can be maintained for ~11 minutes max. Running faster than this pace will only serve to shorten the duration spent at VO2Max, and is thus counterproductive. The recovery for these intervals should be incomplete, so 1:1 with actual running time. This amounts to spending less time ramping to Vo2Max, and more time at VO2Max.
 
 The mile is run about 10% faster than VO2Max.
