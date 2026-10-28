@@ -1,0 +1,12 @@
+<div class="photo-row{{ if eq (len .Params) 1 }} photo-row-single{{ end }}">
+  {{- range .Params -}}
+    {{- $name := . -}}
+    {{- $image := $.Page.Resources.Get (printf "images/%s.jpg" $name) -}}
+    {{- if not $image -}}{{ errorf "Photo %q missing from %s" $name $.Page.File.Path }}{{- end -}}
+    {{- $alt := index $.Page.Params.photos (lower $name) -}}
+    {{- if not $alt -}}{{ errorf "Alt text missing for %q in %s" $name $.Page.File.Path }}{{- end -}}
+    {{- $sizes := "(max-width: 600px) calc(100vw - 90px), (max-width: 1264px) calc((100vw - 150px) / 2), 552px" -}}
+    {{- if eq (len $.Params) 1 -}}{{ $sizes = "(max-width: 600px) calc(100vw - 90px), (max-width: 1264px) calc(100vw - 138px), 1126px" }}{{- end -}}
+    <figure>{{ partial "photo-image.html" (dict "resource" $image "alt" $alt "sizes" $sizes "zoom" true) }}</figure>
+  {{- end -}}
+</div>

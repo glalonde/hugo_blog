@@ -1,0 +1,6 @@
+<dialog class="photo-viewer" aria-label="Enlarged photo">
+  <button class="photo-viewer-close" type="button" autofocus aria-label="Close enlarged photo">Close ×</button>
+  <img class="photo-viewer-image" alt="">
+</dialog>
+{{ $script := resources.Get "js/photo-viewer.js" | minify | fingerprint }}
+<script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" defer></script>

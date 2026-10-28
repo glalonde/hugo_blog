@@ -5,6 +5,8 @@ copyright = ""
 baseURL = "https://glalon.de/"
 locale = "en-US"
 enableRobotsTXT = true
+# A cold build of a large photo essay can take longer than the default minute.
+timeout = '5m'
 
 [params]
   scheme = "dark" # light, dark, gray or preference

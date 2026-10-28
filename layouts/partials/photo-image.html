@@ -1,0 +1,29 @@
+{{- $image := .resource -}}
+{{- $width := math.Min 2560 $image.Width | int -}}
+{{- $webp := slice -}}
+{{- $jpeg := slice -}}
+{{- range (slice 480 960 1600 $width | uniq) -}}
+  {{- if le . $width -}}
+    {{- $w := $image.Resize (printf "%dx webp q82 lanczos" .) -}}
+    {{- $j := $image.Resize (printf "%dx jpeg q85 lanczos" .) -}}
+    {{- $webp = $webp | append (printf "%s %dw" $w.RelPermalink $w.Width) -}}
+    {{- $jpeg = $jpeg | append (printf "%s %dw" $j.RelPermalink $j.Width) -}}
+  {{- end -}}
+{{- end -}}
+{{- $fallback := $image.Resize (printf "%dx jpeg q85 lanczos" (math.Min 960 $width | int)) -}}
+<div class="common-image-container">
+  <div class="{{ .classes | default "post-standard-image" }}">
+    {{ if .zoom }}
+      {{ $large := $image.Fit "2560x2560 jpeg q85 lanczos" }}
+      {{ $largeWebp := $image.Fit "2560x2560 webp q82 lanczos" }}
+      <a class="photo-zoom" href="{{ $large.RelPermalink }}" data-photo-zoom="{{ $largeWebp.RelPermalink }}" aria-label="Enlarge photo: {{ .alt }}">
+    {{ end }}
+    <picture>
+      <source type="image/webp" srcset="{{ delimit $webp ", " }}" sizes="{{ .sizes | default "100vw" }}">
+      <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $jpeg ", " }}" sizes="{{ .sizes | default "100vw" }}"
+        width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .alt | default "" }}"
+        loading="{{ .loading | default "lazy" }}" decoding="async">
+    </picture>
+    {{ if .zoom }}</a>{{ end }}
+  </div>
+</div>
