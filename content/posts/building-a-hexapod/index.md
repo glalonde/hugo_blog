@@ -17,6 +17,8 @@ So far, the work has been a mix of mechanical design, simulation, and getting th
 
 The controller is written in Rust, with shared code running in both a desktop simulator and the robot's firmware. A browser view lets me inspect the motion and look for collisions before committing to hardware. It's useful for finding problems, though a convincing animation doesn't prove the robot can walk.
 
+{{< video src="walking.webm" poster="images/featured.jpg" caption="Walking gait in the simulator. The body stays fixed for inspection." >}}
+
 There has been some real movement: the controller has communicated with a servo and completed a small out-and-back test. It also runs from battery power.
 
 The next milestone is one complete leg, assembled and tested under load. That should tell me much more about the design than another full-robot render. Once that works, the job is to turn it into a walking machine.

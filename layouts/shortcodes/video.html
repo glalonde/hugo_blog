@@ -1,0 +1,11 @@
+{{- $video := .Page.Resources.Get (.Get "src") -}}
+{{- if not $video -}}{{ errorf "Video %q missing from %s" (.Get "src") .Page.File.Path }}{{- end -}}
+{{- $poster := .Page.Resources.Get (.Get "poster") -}}
+{{- $caption := .Get "caption" -}}
+<figure class="post-video">
+  <video controls loop muted playsinline preload="metadata" aria-label="{{ $caption }}"{{ with $poster }} poster="{{ (.Resize "1280x webp q82").RelPermalink }}"{{ end }}>
+    <source src="{{ $video.RelPermalink }}" type="{{ $video.MediaType.Type }}">
+    <a href="{{ $video.RelPermalink }}">Watch the simulation video</a>.
+  </video>
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

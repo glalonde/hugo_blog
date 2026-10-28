@@ -143,6 +143,9 @@ body { font-size: 16px; }
 .photo-row figure { margin: 0; min-width: 0; }
 .photo-row picture, .photo-row img { display: block; }
 .photo-row img { width: 100%; height: auto; }
+.post-video { margin: 28px 0; }
+.post-video video { display: block; width: 100%; height: auto; background: #e9eef0; }
+.post-video figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .photo-zoom { display: block; cursor: zoom-in; }
 .photo-zoom:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; }
 .photo-viewer-open { overflow: hidden; }
