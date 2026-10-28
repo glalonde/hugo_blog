@@ -3,7 +3,7 @@ title: "Road Trip: Spring 2025"
 date: 2025-05-24
 draft: false
 photoEssay: true
-summary: "A road trip through Colorado and Utah. Canyonlands on foot, then the Great Sand Dunes and back to Denver."
+summary: "denver, camping in Arches NP, backpacking in canyonlands NP, camping in great sand dunes NP, Denver"
 featuredAlt: "Pink and orange sunset clouds above the sandstone landscape of Canyonlands."
 build:
   publishResources: false
@@ -43,7 +43,7 @@ photos:
 
 ## Colorado
 
-May 18–24, 2025. From snowy mountains to red rock, then dunes and back to Denver.
+May 18–24, 2025.
 
 {{< photo-row "DSC03549" >}}
 {{< photo-row "DSC03547" "DSC03564" >}}
