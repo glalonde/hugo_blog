@@ -1,11 +1,10 @@
 title = "glalonde"
 theme = "cinnastyx"
-paginate = 20
-pygmentsStyle = "solarized-dark" # solarized-light, -dark or -dark256
 copyright = ""
 
-baseUrl = "/"
-relativeURLs = true
+baseURL = "https://glalon.de/"
+locale = "en-US"
+enableRobotsTXT = true
 
 [params]
   scheme = "dark" # light, dark, gray or preference
@@ -19,3 +18,19 @@ relativeURLs = true
   [[menu.main]]
     name = "About"
     url = "/about"
+
+[pagination]
+  pagerSize = 20
+
+[markup.highlight]
+  style = "solarized-dark"
+
+# Content in this repository is trusted and includes HTML examples.
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [["\\[", "\\]"], ["$$", "$$"]]
+    inline = [["\\(", "\\)"]]
