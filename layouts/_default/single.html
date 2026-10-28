@@ -2,10 +2,10 @@
   <div class="article-navigation"><a href="{{ .Site.Home.RelPermalink }}#writing">← All writing</a><span class="eyebrow">{{ .Site.Title }} / Notebook</span></div>
   <article class="notebook-article{{ if .Params.photoEssay }} photo-essay{{ end }}">
     <header class="reading-header">
-      <div class="entry-meta">
+      {{ if or (not .Date.IsZero) .Content }}<div class="entry-meta">
         {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time><span aria-hidden="true">/</span>{{ end }}
         {{ partial "text-size.html" . }}
-      </div>
+      </div>{{ end }}
       <h1>{{ .Title }}{{ if .Draft }} (Draft){{ end }}</h1>
       {{ with .RawSummary }}<p class="article-deck">{{ $.RenderString . }}</p>{{ end }}
     </header>
