@@ -17,8 +17,8 @@
   --color-midgrey: var(--muted);
 }
 body { font-size: 16px; }
-/* Keep the first major grid line at nav height while the page scrolls over it. */
-.bg-port { background-position: 0 calc(var(--nav-height) + 1px); }
+/* Center the tiles horizontally and keep the first major line at nav height. */
+.bg-port { background-position: center calc(var(--nav-height) + 1px); }
 .header { background: transparent; border-bottom: 0; }
 .site-nav { max-width: 1120px; min-height: var(--nav-height); margin: auto; padding: 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .wordmark { display: inline-block; align-self: flex-end; transform: translateY(14px); border: 1px solid transparent; padding: 5px 12px 7px; font: 30px/1.1 var(--notebook-serif); letter-spacing: .015em; color: var(--ink); white-space: nowrap; }
