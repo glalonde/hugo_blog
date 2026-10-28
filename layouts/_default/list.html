@@ -1,0 +1,24 @@
+{{ define "main" }}
+  {{ if .IsHome }}
+    <h1 class="visually-hidden">{{ .Site.Title }}</h1>
+  {{ else }}
+    <header class="section-introduction"><p class="eyebrow">The notebook</p><h1>{{ .Title }}</h1></header>
+  {{ end }}
+  {{ with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = where .Site.RegularPages "Section" "in" (.Site.Params.mainSections | default (slice "posts")) }}{{ end }}
+  {{ $paginator := .Paginate $pages }}
+  <section id="writing" aria-labelledby="writing-title">
+    <div class="section-heading">
+      <h2 id="writing-title">{{ if .IsHome }}Posts{{ else }}Entries{{ end }}</h2>
+      <span class="eyebrow">{{ printf "%02d" (len $pages) }} entries <span class="heading-divider">/</span> Newest first</span>
+    </div>
+    <div class="notebook-grid">
+      {{ range $index, $element := $paginator.Pages }}
+        {{ partial "post-card.html" (dict "Post" . "Index" $index "Featured" (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0))) }}
+      {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+  </section>
+  {{ partial "notebook-footer.html" . }}
+{{ end }}

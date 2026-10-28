@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <div class="article-navigation"><a href="{{ .Site.Home.RelPermalink }}#writing">← All writing</a><span class="eyebrow">{{ .Site.Title }} / Notebook</span></div>
+  <article class="notebook-article">
+    <header class="reading-header">
+      <div class="entry-meta">
+        {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time><span aria-hidden="true">/</span>{{ end }}
+        {{ partial "text-size.html" . }}
+      </div>
+      <h1>{{ .Title }}{{ if .Draft }} (Draft){{ end }}</h1>
+      {{ with .RawSummary }}<p class="article-deck">{{ . | plainify }}</p>{{ end }}
+    </header>
+    {{ with .Resources.GetMatch "**featured*" }}
+      <div class="article-image post-column">{{ partial "responsive-image.html" (dict "resource" . "classes" "post-full-image" "alt" ($.Params.featuredAlt | default "") "sizes" "100vw" "loading" "eager") }}</div>
+    {{ end }}
+    <div class="reading-body"><div class="post-content reading-content">{{ .Content }}</div></div>
+    <footer class="article-end"><span class="end-mark" aria-hidden="true"></span><a href="{{ .Site.Home.RelPermalink }}#writing">Back to all writing ↑</a></footer>
+  </article>
+  {{ partial "notebook-footer.html" . }}
+{{ end }}

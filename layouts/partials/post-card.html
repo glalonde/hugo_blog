@@ -1,0 +1,23 @@
+{{ $image := .Post.Resources.GetMatch "**featured*" }}
+<a href="{{ .Post.RelPermalink }}" aria-label="Read {{ .Post.Title }}" class="entry-card {{ if .Featured }}entry-featured{{ end }} {{ if not $image }}entry-text-only{{ end }}">
+  <div class="entry-body">
+    <div class="entry-meta">
+      {{ if .Featured }}<span class="entry-label">Latest entry</span><span aria-hidden="true">/</span>{{ end }}
+      {{ if not .Post.Date.IsZero }}<time datetime="{{ .Post.Date.Format "2006-01-02" }}">{{ .Post.Date.Format "02 Jan 2006" }}</time>{{ end }}
+      <span class="entry-size">{{ partial "text-size.html" .Post }}</span>
+    </div>
+    <h2 class="entry-title">{{ .Post.Title }}{{ if .Post.Draft }} (Draft){{ end }}</h2>
+    {{ if and $image (not .Featured) }}
+      <div class="entry-image">
+        {{ partial "responsive-image.html" (dict "resource" $image "classes" "entry-photo" "sizes" "(max-width: 600px) calc(100vw - 90px), (max-width: 800px) calc(50vw - 94px), (max-width: 1184px) calc(50vw - 106px), 488px" "alt" "" "loading" "lazy") }}
+      </div>
+    {{ end }}
+    <p class="entry-summary">{{ .Post.Summary | plainify | truncate 165 }}</p>
+    <span class="entry-read">Read entry <span aria-hidden="true">↗</span></span>
+  </div>
+  {{ if and $image .Featured }}
+    <div class="entry-image">
+      {{ partial "responsive-image.html" (dict "resource" $image "classes" "entry-photo" "sizes" "(max-width: 600px) 92vw, 560px" "alt" "" "loading" "eager") }}
+    </div>
+  {{ end }}
+</a>
