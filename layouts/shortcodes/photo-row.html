@@ -1,9 +1,11 @@
 <div class="photo-row{{ if eq (len .Params) 1 }} photo-row-single{{ end }}">
   {{- range .Params -}}
     {{- $name := . -}}
-    {{- $image := $.Page.Resources.Get (printf "images/%s.jpg" $name) -}}
+    {{- $filename := $name -}}
+    {{- if not (path.Ext $filename) -}}{{ $filename = printf "%s.jpg" $filename }}{{- end -}}
+    {{- $image := $.Page.Resources.Get (printf "images/%s" $filename) -}}
     {{- if not $image -}}{{ errorf "Photo %q missing from %s" $name $.Page.File.Path }}{{- end -}}
-    {{- $alt := index $.Page.Params.photos (lower $name) -}}
+    {{- $alt := index $.Page.Params.photos (lower (strings.TrimSuffix (path.Ext $filename) $filename)) -}}
     {{- if not $alt -}}{{ errorf "Alt text missing for %q in %s" $name $.Page.File.Path }}{{- end -}}
     {{- $sizes := "(max-width: 600px) calc(100vw - 90px), (max-width: 1264px) calc((100vw - 150px) / 2), 552px" -}}
     {{- if eq (len $.Params) 1 -}}{{ $sizes = "(max-width: 600px) calc(100vw - 90px), (max-width: 1264px) calc(100vw - 138px), 1126px" }}{{- end -}}
