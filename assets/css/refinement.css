@@ -29,11 +29,10 @@ body { font-size: 16px; }
 .site-nav-links a[aria-current], .site-nav-links a:hover { color: var(--ink); }
 .site-nav-links a[aria-current] { border-bottom: 1px solid var(--accent-color); }
 .outer { padding: 0 32px; }
-.inner { max-width: 1120px; }
-.inner:has(.notebook-article) { max-width: 1200px; }
+.inner { max-width: 1200px; }
 .eyebrow, .entry-meta { font: 11px/1.6 var(--notebook-mono); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
 #writing { padding-top: 28px; }
-.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 20px 0; border-top: 1px solid #5c5549; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 20px 0; }
 .section-heading h2 { margin: 0; font: 26px/1.25 var(--notebook-serif); color: var(--ink); letter-spacing: -.025em; }
 .heading-divider { margin: 0 10px; color: var(--accent-color); }
 .notebook-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
