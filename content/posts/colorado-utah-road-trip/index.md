@@ -4,7 +4,7 @@ date: 2025-05-25
 draft: false
 photoEssay: true
 summary: "May 17 – 25, 2025. Denver, camping in Arches NP, backpacking in Canyonlands NP, camping in Great Sand Dunes NP, Denver."
-featuredAlt: "Pink and orange sunset clouds above the sandstone landscape of Canyonlands."
+featuredAlt: "A person silhouetted on a dune beneath the Milky Way."
 build:
   publishResources: false
 photos:
@@ -25,6 +25,7 @@ photos:
   dsc03702: "Close-up of green segmented stems among dry vegetation."
   dsc03742: "A small green plant growing in a pocket of sandstone."
   dsc03765: "Sunlight flares around a sandstone formation near sunset."
+  dsc03797: "Pink and orange sunset clouds above the sandstone landscape of Canyonlands."
   dsc03808: "A small fuzzy caterpillar on a red sandstone surface."
   dsc03819: "A wall of sandstone towers above a green canyon floor."
   dsc03824: "Sand dunes and mountains seen through a vehicle window."
@@ -60,6 +61,7 @@ photos:
 {{< photo-row "DSC03702" "DSC03808" >}}
 {{< photo-row "DSC03819" >}}
 {{< photo-row "DSC03765" >}}
+{{< photo-row "DSC03797" >}}
 {{< photo-row "DSC03683" "DSC03687" >}}
 
 ## Great Sand Dunes
